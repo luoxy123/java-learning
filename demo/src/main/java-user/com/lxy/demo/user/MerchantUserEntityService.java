@@ -28,4 +28,7 @@ public class MerchantUserEntityService {
         return merchantUserEntityDao.update(pojo);
     }
 
+    public List<MerchantUserDto> selectall(MerchantUserEntity entity) {
+        return merchantUserEntityDao.selectall(entity);
+    }
 }
