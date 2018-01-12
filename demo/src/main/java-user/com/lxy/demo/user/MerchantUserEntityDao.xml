@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxy.demo.user.mapper.MerchantUserEntityDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.lxy.demo.user.MerchantUserEntity">
+        <result column="UserId" property="id" />
+        <result column="Name" property="name"/>
+        <result column="Gender" property="gender"/>
+        <result column="LastLoginTime" property="lastLoginTime"/>
+        <result column="Avatar" property="avatar"/>
+        <result column="Deleted" property="deleted"/>
+        <result column="Disabled" property="disabled"/>
+        <result column="MerchantId" property="merchantId"/>
+        <result column="DepartmentId" property="departmentId"/>
+        <result column="CreateTime" property="createTime"/>
+        <result column="AccountType" property="accountType"/>
+        <result column="Role" property="role"/>
+        <result column="SecurityStamp" property="securityStamp"/>
+        <result column="Comment" property="comment"/>
+        <result column="Account" property="account"/>
+        <result column="PasswordHash" property="passwordHash"/>
+        <result column="PhoneNumber" property="phoneNumber"/>
+
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        UserId,
+        Name,
+        Gender,
+        LastLoginTime,
+        Avatar,
+        Deleted,
+        Disabled,
+        MerchantId,
+        DepartmentId,
+        AccountType,
+        CreateTime,
+        Role,
+        SecurityStamp,
+        Comment,
+        Account,
+        PasswordHash
+
+    </sql>
+
+
+    <!--auto generated Code-->
+    <sql id="all_inner_column">
+        u.UserId  as id,
+        u.Name,
+        u.Gender,
+        u.LastLoginTime,
+        u.Avatar,
+        u.Deleted,
+        u.Disabled,
+        u.MerchantId,
+        u.DepartmentId,
+        u.AccountType,
+        u.CreateTime,
+        u.Role,
+        u.SecurityStamp,
+        u.Comment,
+        u.Account,
+        u.PasswordHash,
+        dep.`Name` as DepartmentName,
+        info.`Name` as MerchantName
+    </sql>
+
+
+
+    <!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO user_merchant
+
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> UserId, </if>
+            <if test="pojo.name != null"> Name, </if>
+            <if test="pojo.gender != null"> Gender, </if>
+            <if test="pojo.lastLoginTime != null"> LastLoginTime, </if>
+            <if test="pojo.avatar != null"> Avatar, </if>
+            <if test="pojo.deleted != null"> Deleted, </if>
+            <if test="pojo.disabled != null"> Disabled, </if>
+            <if test="pojo.merchantId != null"> MerchantId, </if>
+            <if test="pojo.departmentId != null"> DepartmentId, </if>
+            <if test="pojo.accountType != null"> AccountType, </if>
+            <if test="pojo.createTime != null"> CreateTime, </if>
+            <if test="pojo.role != null"> Role, </if>
+            <if test="pojo.securityStamp != null"> SecurityStamp, </if>
+            <if test="pojo.comment != null"> Comment, </if>
+            <if test="pojo.account != null"> Account, </if>
+            <if test="pojo.passwordHash != null"> PasswordHash, </if>
+            <if test="pojo.phoneNumber != null"> PasswordHash, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.name != null"> #{pojo.name}, </if>
+            <if test="pojo.gender != null"> #{pojo.gender}, </if>
+            <if test="pojo.lastLoginTime != null"> #{pojo.lastLoginTime}, </if>
+            <if test="pojo.avatar != null"> #{pojo.avatar}, </if>
+            <if test="pojo.deleted != null"> #{pojo.deleted}, </if>
+            <if test="pojo.disabled != null"> #{pojo.disabled}, </if>
+            <if test="pojo.merchantId != null"> #{pojo.merchantId}, </if>
+            <if test="pojo.departmentId != null"> #{pojo.departmentId}, </if>
+            <if test="pojo.accountType != null"> #{pojo.accountType}, </if>
+            <if test="pojo.createTime != null"> #{pojo.createTime}, </if>
+            <if test="pojo.role != null"> #{pojo.role}, </if>
+            <if test="pojo.securityStamp != null"> #{pojo.securityStamp}, </if>
+            <if test="pojo.comment != null"> #{pojo.comment}, </if>
+            <if test="pojo.account != null"> #{pojo.account}, </if>
+            <if test="pojo.passwordHash != null"> #{pojo.passwordHash}, </if>
+            <if test="pojo.phoneNumber != null"> #{pojo.phoneNumber}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO user_merchant(
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.name},
+            #{pojo.gender},
+            #{pojo.lastLoginTime},
+            #{pojo.avatar},
+            #{pojo.deleted},
+            #{pojo.disabled},
+            #{pojo.merchantId},
+            #{pojo.departmentId},
+            #{pojo.accountType},
+            #{pojo.createTime},
+            #{pojo.role},
+            #{pojo.securityStamp},
+            #{pojo.comment},
+            #{pojo.account},
+            #{pojo.passwordHash},
+            #{pojo.phoneNumber}
+            )
+        </foreach>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE merchant_user_entity
+        <set>
+            <if test="pojo.id != null and pojo.id!=0"> id = #{pojo.id}, </if>
+            <if test="pojo.name != null"> name = #{pojo.name}, </if>
+            <if test="pojo.gender != null"> gender = #{pojo.gender}, </if>
+            <if test="pojo.lastLoginTime != null"> last_login_time = #{pojo.lastLoginTime}, </if>
+            <if test="pojo.avatar != null"> avatar = #{pojo.avatar}, </if>
+            <if test="pojo.deleted != null"> deleted = #{pojo.deleted}, </if>
+            <if test="pojo.disabled != null"> disabled = #{pojo.disabled}, </if>
+            <if test="pojo.merchantId != null"> merchant_id = #{pojo.merchantId}, </if>
+            <if test="pojo.departmentId != null"> department_id = #{pojo.departmentId}, </if>
+            <if test="pojo.accountType != null"> account_type = #{pojo.accountType}, </if>
+            <if test="pojo.createTime != null"> create_time = #{pojo.createTime}, </if>
+            <if test="pojo.role != null"> role = #{pojo.role}, </if>
+            <if test="pojo.securityStamp != null"> security_stamp = #{pojo.securityStamp}, </if>
+            <if test="pojo.comment != null"> comment = #{pojo.comment}, </if>
+            <if test="pojo.account != null"> account = #{pojo.account}, </if>
+            <if test="pojo.passwordHash != null"> password_hash = #{pojo.passwordHash}, </if>
+            <if test="pojo.phoneNumber != null"> phone_number = #{pojo.phoneNumber} </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM user_merchant
+        <where>
+
+            <if test="pojo.id != null and pojo.id != 0"> AND UserId = #{pojo.id} </if>
+            <if test="pojo.name != null"> AND Name = #{pojo.name} </if>
+            <if test="pojo.gender != null and pojo.gender != 0"> AND Gender = #{pojo.gender} </if>
+            <if test="pojo.lastLoginTime != null"> AND LastLoginTime = #{pojo.lastLoginTime} </if>
+            <if test="pojo.avatar != null"> AND Avatar = #{pojo.avatar} </if>
+            <if test="pojo.deleted != null"> AND Deleted } </if>
+            <if test="pojo.disabled != null"> AND Disabled = #{pojo.disab= #{pojo.deletedled} </if>
+            <if test="pojo.merchantId != null and pojo.merchantId != 0"> AND MerchantId = #{pojo.merchantId} </if>
+            <if test="pojo.departmentId != null and pojo.departmentId != 0"> AND DepartmentId = #{pojo.departmentId} </if>
+            <if test="pojo.accountType != null and pojo.accountType != 0"> AND AccountType = #{pojo.accountType} </if>
+            <if test="pojo.createTime != null "> AND CreateTime = #{pojo.createTime} </if>
+            <if test="pojo.role != null and pojo.role != 0"> AND Role = #{pojo.role} </if>
+            <if test="pojo.securityStamp != null"> AND SecurityStamp = #{pojo.securityStamp} </if>
+            <if test="pojo.comment != null"> AND Comment = #{pojo.comment} </if>
+            <if test="pojo.account != null"> AND Account = #{pojo.account} </if>
+            <if test="pojo.passwordHash != null"> AND PasswordHash = #{pojo.passwordHash} </if>
+            <if test="pojo.phoneNumber != null"> AND PhoneNumber = #{pojo.phoneNumber} </if>
+        </where>
+
+        LIMIT 1000 
+    </select>
+
+
+    <resultMap id="AllColumnMap1" type="com.lxy.demo.user.MerchantUserDto">
+        <result column="UserId" property="id" />
+        <result column="Name" property="name"/>
+        <result column="Gender" property="gender"/>
+        <result column="LastLoginTime" property="lastLoginTime"/>
+        <result column="Avatar" property="avatar"/>
+        <result column="Deleted" property="deleted"/>
+        <result column="Disabled" property="disabled"/>
+        <result column="MerchantId" property="merchantId"/>
+        <result column="DepartmentId" property="departmentId"/>
+        <result column="CreateTime" property="createTime"/>
+        <result column="AccountType" property="accountType"/>
+        <result column="Role" property="role"/>
+        <result column="SecurityStamp" property="securityStamp"/>
+        <result column="Comment" property="comment"/>
+        <result column="Account" property="account"/>
+        <result column="PasswordHash" property="passwordHash"/>
+        <result column="PhoneNumber" property="phoneNumber"/>
+        <result column="DepartmentName" property="departmentName"/>
+        <result column="MerchantName" property="merchantName"/>
+
+    </resultMap>
+
+
+
+
+    <select id="selectall"   resultType="com.lxy.demo.user.MerchantUserDto" >
+        SELECT <include refid="all_inner_column"/>
+        FROM user_merchant u
+        inner join
+        merchant_department dep on u.DepartmentId=dep.id Inner JOIN merchant_information info on info.id=u.MerchantId
+        <where>
+
+            <if test="pojo.id != null and pojo.id != 0"> AND UserId = #{pojo.id} </if>
+            <if test="pojo.name != null"> AND Name = #{pojo.name} </if>
+            <if test="pojo.gender != null and pojo.gender != 0"> AND Gender = #{pojo.gender} </if>
+            <if test="pojo.lastLoginTime != null"> AND LastLoginTime = #{pojo.lastLoginTime} </if>
+            <if test="pojo.avatar != null"> AND Avatar = #{pojo.avatar} </if>
+            <if test="pojo.deleted != null"> AND Deleted } </if>
+            <if test="pojo.disabled != null"> AND Disabled = #{pojo.disab= #{pojo.deletedled} </if>
+            <if test="pojo.merchantId != null and pojo.merchantId != 0"> AND MerchantId = #{pojo.merchantId} </if>
+            <if test="pojo.departmentId != null and pojo.departmentId != 0"> AND DepartmentId = #{pojo.departmentId} </if>
+            <if test="pojo.accountType != null and pojo.accountType != 0"> AND AccountType = #{pojo.accountType} </if>
+            <if test="pojo.createTime != null "> AND CreateTime = #{pojo.createTime} </if>
+            <if test="pojo.role != null and pojo.role != 0"> AND Role = #{pojo.role} </if>
+            <if test="pojo.securityStamp != null"> AND SecurityStamp = #{pojo.securityStamp} </if>
+            <if test="pojo.comment != null"> AND Comment = #{pojo.comment} </if>
+            <if test="pojo.account != null"> AND Account = #{pojo.account} </if>
+            <if test="pojo.passwordHash != null"> AND PasswordHash = #{pojo.passwordHash} </if>
+            <if test="pojo.phoneNumber != null"> AND PhoneNumber = #{pojo.phoneNumber} </if>
+        </where>
+
+        LIMIT 1000
+    </select>
+
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM user_merchant where id = #{pojo.id}
+    </delete>
+</mapper>

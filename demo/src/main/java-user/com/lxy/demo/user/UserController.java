@@ -8,9 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("user")
@@ -34,7 +32,7 @@ public class UserController {
 
 
     @RequestMapping("/getUser")
-    public  UserEntity getUser(@RequestParam long id){
+    public  UserEntity getUser(@RequestParam long id,@RequestParam  java.sql.Timestamp time){
         UserEntity user = userDao.getOne(id);
         return user;
     }
