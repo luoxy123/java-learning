@@ -7,10 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("user")
@@ -19,7 +16,7 @@ public class UserController {
     @Autowired
     private UserDao userDao;
 
-    @RequestMapping("/")
+    @RequestMapping("/hello")
     public String Sayhello (){
        return "hello world";
     }
@@ -29,6 +26,7 @@ public class UserController {
     @RequestMapping("/getUsers")
     public List<UserEntity> getUsers(){
         List<UserEntity> users = userDao.getAll();
+
         return users;
     }
 
