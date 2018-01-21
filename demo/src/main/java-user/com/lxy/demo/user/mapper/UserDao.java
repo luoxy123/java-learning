@@ -1,6 +1,7 @@
 package com.lxy.demo.user.mapper;
 
 import com.lxy.demo.user.UserEntity;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -8,6 +9,8 @@ import java.util.List;
         List<UserEntity> getAll();
 
         UserEntity getOne(long id);
+
+        UserEntity getUser(@Param("username") String username,@Param("password") String password);
 
         void insert(UserEntity user);
 

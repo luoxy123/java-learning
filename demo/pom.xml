@@ -70,6 +70,21 @@
 
 		<!-- log4j2支持异步日志，导入disruptor依赖 -->
 
+		<!--添加spring-security-->
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt</artifactId>
+			<version>0.7.0</version>
+		</dependency>
+
 		<dependency>
 
 			<groupId>com.lmax</groupId>
@@ -78,6 +93,10 @@
 
 			<version>3.3.6</version>
 
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
 		</dependency>
 
 

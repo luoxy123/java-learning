@@ -22,6 +22,10 @@ public class UserEntity implements Serializable {
     @JsonProperty("nick_name")
     private String nickName;
 
+    @JsonProperty("role")
+    private String role;
+
+
     public UserEntity() {
         super();
     }
@@ -81,4 +85,11 @@ public class UserEntity implements Serializable {
     }
 
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
 }
